@@ -3,6 +3,8 @@ def line():
     coeficiente_B = float(input("Ingrese coeficiente B: "))
     coeficiente_X1 = float(input("Ingrese coeficiente X1:"))
     coeficiente_X2 = float(input("Ingrese coeficiente X2:"))
+    coeficiente_Y1 = (coeficiente_A * coeficiente_X1 + coeficiente_B)
+    coeficiente_Y2 = (coeficiente_A * coeficiente_X2 + coeficiente_B)
     print(f"El coeficiente A de su ecuación de la recta es: {coeficiente_A}")
     print(f"El coeficiente B de su ecuación de la recta es: {coeficiente_B}")
     print(f"El coeficiente X1 de su ecuación de la recta es: {coeficiente_X1}")
@@ -12,13 +14,12 @@ def line():
     print(f"\tY = {coeficiente_A}X + {coeficiente_B}")
 
     print("\nDados los siguientes puntos:")
-    P1 = (50.0, 110.99999999999999)
-    P2 = (-32.9, -79.66999999999999)
-    print(f"\tP1 {P1}")
-    print(f"\tP2 {P2}")
-    y2 = -79.66999999999999
-    y1 = 110.99999999999999
-    x2 = -32.9
-    x1 = 50.0
-    distancia = float(((y2 - y1)**2 + (x2 - x1)**2)**0.5)
+    p = [coeficiente_X1, coeficiente_Y1]
+    q = [coeficiente_X2, coeficiente_Y2]
+
+    P1_str = f"P1 ({coeficiente_X1}, {coeficiente_Y1})"
+    P2_str = f"P2 ({coeficiente_X2}, {coeficiente_Y2})"
+    print(f"\t{P1_str}")
+    print(f"\t{P2_str}")
+    distancia = float(((coeficiente_Y2 - coeficiente_Y1)**2 + (coeficiente_X2 - coeficiente_X1)**2)**0.5)
     print(f"\nLa distancia entre ellos es: {distancia}")
